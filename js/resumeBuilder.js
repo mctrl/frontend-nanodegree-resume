@@ -88,7 +88,7 @@ var education = {
             var formattedSchoolDates = HTMLschoolDates.replace("%data%", this.schools[i].dates)
             var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", this.schools[i].location)
             var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", this.schools[i].majors.join(", "))
-            $(".education-entry").last().append([formattedSchoolName, formattedSchoolDegree, formattedSchoolDates, formattedSchoolLocation, formattedSchoolMajor])
+            $(".education-entry").last().append([formattedSchoolName, formattedSchoolDates, formattedSchoolLocation, formattedSchoolMajor]).find("a").append([formattedSchoolDegree])
         };
         $(".education-entry").last().after([HTMLonlineClasses]);
         for (var i = 0; i < this.onlineCourses.length; i++) {
@@ -97,7 +97,7 @@ var education = {
             var formattedOlineSchool = HTMLonlineSchool.replace("%data%", this.onlineCourses[i].school)
             var formattedOlineDates = HTMLonlineDates.replace("%data%", this.onlineCourses[i].dates)
             var formattedOlineURL = HTMLonlineURL.replace("%data%", this.onlineCourses[i].url)
-            $(".education-entry").last().append([formattedOlineTitle, formattedOlineSchool, formattedOlineDates, formattedOlineURL])
+            $(".education-entry").last().append([formattedOlineTitle, formattedOlineDates, formattedOlineURL]).find("a").append([formattedOlineSchool])
         };
     }
 }
@@ -123,22 +123,15 @@ var work = {
         console.log(this);
         for (var i = 0; i < this.jobs.length; i++) {
             $("#workExperience").append([HTMLworkStart]);
-            var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", this.jobs[i].employer)
-            var formattedWorkTitle = HTMLworkTitle.replace("%data%", this.jobs[i].title)
-            var formattedWorkDates = HTMLworkDates.replace("%data%", this.jobs[i].dates)
+            var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", this.jobs[i].employer);
+            var formattedWorkTitle = HTMLworkTitle.replace("%data%", this.jobs[i].title);
+            var formattedWorkDates = HTMLworkDates.replace("%data%", this.jobs[i].dates);
             var formattedWorkLocation = HTMLworkLocation.replace("%data%", this.jobs[i].location)
             var formattedWorkDescription = HTMLworkDescription.replace("%data%", this.jobs[i].description)
-            $(".work-entry").last().append([formattedWorkEmployer, formattedWorkTitle, formattedWorkDates, formattedWorkLocation, formattedWorkDescription])
+            $(".work-entry").last().append([formattedWorkEmployer, formattedWorkDates, formattedWorkLocation, formattedWorkDescription]).find("a").append([formattedWorkTitle])
         };
     }
 }
 
 work.display();
 
-
-// var HTMLworkStart = '<div class="work-entry"></div>';
-// var HTMLworkEmployer = '<a href="#">%data%';
-// var HTMLworkTitle = ' - %data%</a>';
-// var HTMLworkDates = '<div class="date-text">%data%</div>';
-// var HTMLworkLocation = '<div class="location-text">%data%</div>';
-// var HTMLworkDescription = '<p><br>%data%</p>';
