@@ -135,3 +135,20 @@ var work = {
 
 work.display();
 
+
+var projects = {
+    projects: [{
+        title: "Sample Project 1",
+        dates: "2014",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla imperdiet egestas. Etiam ultrices magna nec lectus commodo, et aliquet dolor faucibus. Mauris mauris sapien, laoreet et hendrerit a, pharetra at mauris. Maecenas pellentesque facilisis pretium."
+    	images: ["images/197x148.gif", "images/197x148.gif"]
+    },{
+        title: "Sample Project 2",
+        dates: "2016",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla imperdiet egestas. Etiam ultrices magna nec lectus commodo, et aliquet dolor faucibus. Mauris mauris sapien, laoreet et hendrerit a, pharetra at mauris. Maecenas pellentesque facilisis pretium."
+    	images: ["images/197x148.gif", "images/197x148.gif"]
+    }],
+    display: function() {
+        console.log(this);
+    }
+}
