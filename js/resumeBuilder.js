@@ -75,16 +75,16 @@ var education = {
             var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", this.schools[i].location)
             var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", this.schools[i].majors.join(", "))
             $(".education-entry").last().append([formattedSchoolName, formattedSchoolDates, formattedSchoolLocation, formattedSchoolMajor]).find("a").append([formattedSchoolDegree])
-        };
+        }
         $(".education-entry").last().after([HTMLonlineClasses]);
-        for (var i = 0; i < this.onlineCourses.length; i++) {
+        for (var j = 0; j < this.onlineCourses.length; j++) {
             $("#education").append([HTMLschoolStart]);
-            var formattedOlineTitle = HTMLonlineTitle.replace("%data%", this.onlineCourses[i].title)
-            var formattedOlineSchool = HTMLonlineSchool.replace("%data%", this.onlineCourses[i].school)
-            var formattedOlineDates = HTMLonlineDates.replace("%data%", this.onlineCourses[i].dates)
-            var formattedOlineURL = HTMLonlineURL.replace("%data%", this.onlineCourses[i].url)
+            var formattedOlineTitle = HTMLonlineTitle.replace("%data%", this.onlineCourses[j].title)
+            var formattedOlineSchool = HTMLonlineSchool.replace("%data%", this.onlineCourses[j].school)
+            var formattedOlineDates = HTMLonlineDates.replace("%data%", this.onlineCourses[j].dates)
+            var formattedOlineURL = HTMLonlineURL.replace("%data%", this.onlineCourses[j].url)
             $(".education-entry").last().append([formattedOlineTitle, formattedOlineDates, formattedOlineURL]).find("a").append([formattedOlineSchool])
-        };
+        }
     }
 }
 
@@ -115,7 +115,7 @@ var work = {
             var formattedWorkLocation = HTMLworkLocation.replace("%data%", this.jobs[i].location)
             var formattedWorkDescription = HTMLworkDescription.replace("%data%", this.jobs[i].description)
             $(".work-entry").last().append([formattedWorkEmployer, formattedWorkDates, formattedWorkLocation, formattedWorkDescription]).find("a").append([formattedWorkTitle])
-        };
+        }
     }
 }
 
@@ -146,8 +146,8 @@ var projects = {
         	for (var j = 0; j < images.length; j++) {
         		var formattedProjectImages = HTMLprojectImage.replace("%data%", images[j]);
         		 $(".project-entry").last().append(formattedProjectImages);
-        	};
-        };
+        	}
+        }
     }
 }
 
