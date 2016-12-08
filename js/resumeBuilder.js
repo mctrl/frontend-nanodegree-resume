@@ -80,7 +80,7 @@ var education = {
         url: "www.url.com"
     }],
     display: function() {
-        console.log(this);
+        // console.log(this);
         for (var i = 0; i < this.schools.length; i++) {
             $("#education").append([HTMLschoolStart]);
             var formattedSchoolName = HTMLschoolName.replace("%data%", this.schools[i].name)
@@ -90,9 +90,9 @@ var education = {
             var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", this.schools[i].majors.join(", "))
             $(".education-entry").last().append([formattedSchoolName, formattedSchoolDegree, formattedSchoolDates, formattedSchoolLocation, formattedSchoolMajor])
         };
-        $("#education").append([HTMLonlineClasses]);
+        $(".education-entry").last().after([HTMLonlineClasses]);
         for (var i = 0; i < this.onlineCourses.length; i++) {
-            // $("#education").append([HTMLschoolStart]);
+            $("#education").append([HTMLschoolStart]);
             var formattedOlineTitle = HTMLonlineTitle.replace("%data%", this.onlineCourses[i].title)
             var formattedOlineSchool = HTMLonlineSchool.replace("%data%", this.onlineCourses[i].school)
             var formattedOlineDates = HTMLonlineDates.replace("%data%", this.onlineCourses[i].dates)
