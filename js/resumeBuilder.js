@@ -112,7 +112,7 @@ var work = {
         location: "Brooklyn, NY",
         dates: "January 2000 - Future",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla imperdiet egestas. Etiam ultrices magna nec lectus commodo, et aliquet dolor faucibus. Mauris mauris sapien, laoreet et hendrerit a, pharetra at mauris. Maecenas pellentesque facilisis pretium."
-    },{
+    }, {
         employer: "Panucci's Pizza",
         title: "Delivery Boy",
         location: "Manhattan, NY",
@@ -120,7 +120,7 @@ var work = {
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla imperdiet egestas. Etiam ultrices magna nec lectus commodo, et aliquet dolor faucibus. Mauris mauris sapien, laoreet et hendrerit a, pharetra at mauris. Maecenas pellentesque facilisis pretium."
     }],
     display: function() {
-        console.log(this);
+        // console.log(this);
         for (var i = 0; i < this.jobs.length; i++) {
             $("#workExperience").append([HTMLworkStart]);
             var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", this.jobs[i].employer);
@@ -138,17 +138,33 @@ work.display();
 
 var projects = {
     projects: [{
-        title: "Sample Project 1",
-        dates: "2014",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla imperdiet egestas. Etiam ultrices magna nec lectus commodo, et aliquet dolor faucibus. Mauris mauris sapien, laoreet et hendrerit a, pharetra at mauris. Maecenas pellentesque facilisis pretium."
-    	images: ["images/197x148.gif", "images/197x148.gif"]
-    },{
         title: "Sample Project 2",
         dates: "2016",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla imperdiet egestas. Etiam ultrices magna nec lectus commodo, et aliquet dolor faucibus. Mauris mauris sapien, laoreet et hendrerit a, pharetra at mauris. Maecenas pellentesque facilisis pretium."
-    	images: ["images/197x148.gif", "images/197x148.gif"]
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla imperdiet egestas. Etiam ultrices magna nec lectus commodo, et aliquet dolor faucibus. Mauris mauris sapien, laoreet et hendrerit a, pharetra at mauris. Maecenas pellentesque facilisis pretium.",
+        images: ["images/197x148.gif", "images/197x148.gif"]
+    }, {
+        title: "Sample Project 1",
+        dates: "2014",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla imperdiet egestas. Etiam ultrices magna nec lectus commodo, et aliquet dolor faucibus. Mauris mauris sapien, laoreet et hendrerit a, pharetra at mauris. Maecenas pellentesque facilisis pretium.",
+        images: ["images/197x148.gif", "images/197x148.gif"]
     }],
     display: function() {
         console.log(this);
+        for (var i = 0; i < this.projects.length; i++) {
+            $("#projects").append([HTMLprojectStart]);
+            var formattedProjectTitle = HTMLprojectTitle.replace("%data%", this.projects[i].title);
+            var formattedProjectDates = HTMLprojectDates.replace("%data%", this.projects[i].dates);
+            var formattedProjectDescription = HTMLprojectDescription.replace("%data%", this.projects[i].description)
+            $(".project-entry").last().append([formattedProjectTitle, formattedProjectDates, formattedProjectDescription])
+        };
     }
 }
+
+
+projects.display();
+
+// var HTMLprojectStart = '<div class="project-entry"></div>';
+// var HTMLprojectTitle = '<a href="#">%data%</a>';
+// var HTMLprojectDates = '<div class="date-text">%data%</div>';
+// var HTMLprojectDescription = '<p><br>%data%</p>';
+// var HTMLprojectImage = '<img src="%data%">';
