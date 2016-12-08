@@ -2,20 +2,6 @@
 This is empty on purpose! Your code to build the resume will go here.
  */
 
-
-// $("#main").append(["Mrt"]);
-
-// var awesomeThoughts = "I am Mrt and I am AWESOME!";
-
-// var funThoughts = awesomeThoughts.replace("AWESOME", "FUN");
-
-// console.log(awesomeThoughts);
-// console.log(funThoughts);
-
-// $("#main").append([funThoughts]);
-
-// var skills = ["", ""]
-
 var bio = {
     "name": "Marty",
     "role": "Web Developer",
@@ -149,22 +135,21 @@ var projects = {
         images: ["images/197x148.gif", "images/197x148.gif"]
     }],
     display: function() {
-        console.log(this);
+        // console.log(this);
         for (var i = 0; i < this.projects.length; i++) {
             $("#projects").append([HTMLprojectStart]);
             var formattedProjectTitle = HTMLprojectTitle.replace("%data%", this.projects[i].title);
             var formattedProjectDates = HTMLprojectDates.replace("%data%", this.projects[i].dates);
-            var formattedProjectDescription = HTMLprojectDescription.replace("%data%", this.projects[i].description)
-            $(".project-entry").last().append([formattedProjectTitle, formattedProjectDates, formattedProjectDescription])
+            var formattedProjectDescription = HTMLprojectDescription.replace("%data%", this.projects[i].description);
+            $(".project-entry").last().append([formattedProjectTitle, formattedProjectDates, formattedProjectDescription]);
+        	var images = this.projects[i].images;
+        	for (var j = 0; j < images.length; j++) {
+        		var formattedProjectImages = HTMLprojectImage.replace("%data%", images[j]);
+        		 $(".project-entry").last().append(formattedProjectImages);
+        	};
         };
     }
 }
 
-
 projects.display();
 
-// var HTMLprojectStart = '<div class="project-entry"></div>';
-// var HTMLprojectTitle = '<a href="#">%data%</a>';
-// var HTMLprojectDates = '<div class="date-text">%data%</div>';
-// var HTMLprojectDescription = '<p><br>%data%</p>';
-// var HTMLprojectImage = '<img src="%data%">';
