@@ -61,17 +61,17 @@ bio.display();
 
 var education = {
     schools: [{
-        name: "Eckend College",
-        location: "Saint Petersburg, FL",
-        degree: "BA",
-        majors: ["CS", "CS"],
-        dates: "2003",
-    }, {
         name: "Nove Southeastern University",
         location: "Fort Lauderdale, FL",
         degree: "Masters",
         majors: ["CS", "CS"],
         dates: "2013",
+    }, {
+        name: "Eckend College",
+        location: "Saint Petersburg, FL",
+        degree: "BA",
+        majors: ["CS", "CS"],
+        dates: "2003",
     }],
     onlineCourses: [{
         title: "Javascript Crash Course",
@@ -104,11 +104,6 @@ var education = {
 
 education.display();
 
-// var HTMLonlineClasses = '<h3>Online Classes</h3>';
-// var HTMLonlineTitle = '<a href="#">%data%';
-// var HTMLonlineSchool = ' - %data%</a>';
-// var HTMLonlineDates = '<div class="date-text">%data%</div>';
-// var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
 var work = {
     jobs: [{
