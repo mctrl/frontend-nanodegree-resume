@@ -46,24 +46,24 @@ var bio = {
 bio.display();
 
 var education = {
-    schools: [{
-        name: "Nove Southeastern University",
-        location: "Fort Lauderdale, FL",
-        degree: "Masters",
-        majors: ["CS", "CS"],
-        dates: "2013",
+    "schools": [{
+        "name": "Nove Southeastern University",
+        "location": "Fort Lauderdale, FL",
+        "degree": "Masters",
+        "majors": ["CS", "CS"],
+        "dates": "2013",
     }, {
-        name: "Eckend College",
-        location: "Saint Petersburg, FL",
-        degree: "BA",
-        majors: ["CS", "CS"],
-        dates: "2003",
+        "name": "Eckend College",
+        "location": "Saint Petersburg, FL",
+        "degree": "BA",
+        "majors": ["CS", "CS"],
+        "dates": "2003",
     }],
-    onlineCourses: [{
-        title: "Javascript Crash Course",
-        school: "Udacity",
-        dates: "2014",
-        url: "www.url.com"
+    "onlineCourses": [{
+        "title": "Javascript Crash Course",
+        "school": "Udacity",
+        "dates": "2014",
+        "url": "www.url.com"
     }],
     display: function() {
         // console.log(this);
