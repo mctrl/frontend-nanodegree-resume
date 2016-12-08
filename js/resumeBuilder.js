@@ -107,21 +107,38 @@ education.display();
 
 var work = {
     jobs: [{
+        employer: "Planet Express",
+        title: "Delivery Boy",
+        location: "Brooklyn, NY",
+        dates: "January 2000 - Future",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla imperdiet egestas. Etiam ultrices magna nec lectus commodo, et aliquet dolor faucibus. Mauris mauris sapien, laoreet et hendrerit a, pharetra at mauris. Maecenas pellentesque facilisis pretium."
+    },{
         employer: "Panucci's Pizza",
         title: "Delivery Boy",
         location: "Manhattan, NY",
         dates: "1998 - Devember 31, 1999",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla imperdiet egestas. Etiam ultrices magna nec lectus commodo, et aliquet dolor faucibus. Mauris mauris sapien, laoreet et hendrerit a, pharetra at mauris. Maecenas pellentesque facilisis pretium."
-    }, {
-        employer: "employer2",
-        title: "Delivery Boy",
-        location: "Brooklyn, NY",
-        dates: "January 2000 - Future",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla imperdiet egestas. Etiam ultrices magna nec lectus commodo, et aliquet dolor faucibus. Mauris mauris sapien, laoreet et hendrerit a, pharetra at mauris. Maecenas pellentesque facilisis pretium."
     }],
     display: function() {
         console.log(this);
+        for (var i = 0; i < this.jobs.length; i++) {
+            $("#workExperience").append([HTMLworkStart]);
+            var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", this.jobs[i].employer)
+            var formattedWorkTitle = HTMLworkTitle.replace("%data%", this.jobs[i].title)
+            var formattedWorkDates = HTMLworkDates.replace("%data%", this.jobs[i].dates)
+            var formattedWorkLocation = HTMLworkLocation.replace("%data%", this.jobs[i].location)
+            var formattedWorkDescription = HTMLworkDescription.replace("%data%", this.jobs[i].description)
+            $(".work-entry").last().append([formattedWorkEmployer, formattedWorkTitle, formattedWorkDates, formattedWorkLocation, formattedWorkDescription])
+        };
     }
 }
 
 work.display();
+
+
+// var HTMLworkStart = '<div class="work-entry"></div>';
+// var HTMLworkEmployer = '<a href="#">%data%';
+// var HTMLworkTitle = ' - %data%</a>';
+// var HTMLworkDates = '<div class="date-text">%data%</div>';
+// var HTMLworkLocation = '<div class="location-text">%data%</div>';
+// var HTMLworkDescription = '<p><br>%data%</p>';
