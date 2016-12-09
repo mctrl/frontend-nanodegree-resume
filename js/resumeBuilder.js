@@ -76,7 +76,7 @@ var education = {
             var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", this.schools[i].degree)
             var formattedSchoolDates = HTMLschoolDates.replace("%data%", this.schools[i].dates)
             var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", this.schools[i].location)
-            if (this.schools[i].majors.length>0) {
+            if (this.schools[i].majors.length > 0) {
                 var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", this.schools[i].majors.join(", "))
             } else {
                 var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", "N/A")
@@ -150,10 +150,12 @@ var projects = {
             var formattedProjectDescription = HTMLprojectDescription.replace("%data%", this.projects[i].description);
             $(".project-entry").last().append([formattedProjectTitle, formattedProjectDates, formattedProjectDescription]);
             var images = this.projects[i].images;
-            for (var j = 0; j < images.length; j++) {
-                var formattedProjectImages = HTMLprojectImage.replace("%data%", images[j]);
-                $(".project-entry").last().append(formattedProjectImages);
-            }
+            if (images, length > 0) {
+                for (var j = 0; j < images.length; j++) {
+                    var formattedProjectImages = HTMLprojectImage.replace("%data%", images[j]);
+                    $(".project-entry").last().append(formattedProjectImages);
+                }
+            };
         }
     }
 }
