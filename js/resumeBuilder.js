@@ -3,7 +3,7 @@ This is empty on purpose! Your code to build the resume will go here.
  */
 
 var bio = {
-    "name": "Marty",
+    "name": "Marty Ctrl",
     "role": "Web Developer",
     "contacts": {
         "mobile": "000",
@@ -163,4 +163,15 @@ var projects = {
 
 projects.display();
 
-$("#mapDiv").append(googleMap)
+$("#mapDiv").append(googleMap);
+$("#main").prepend(internationalizeButton)
+function inName(name) {
+    var name = name;
+    var InternationalName = name.split(" ");
+    InternationalName[1] = InternationalName[1].toUpperCase();
+    InternationalName = InternationalName.join(" ");
+    // console.log(InternationalName)
+
+    return InternationalName
+}
+
