@@ -167,8 +167,9 @@ $("#mapDiv").append(googleMap);
 $("#main").prepend(internationalizeButton)
 function inName(name) {
     var name = name;
-    var InternationalName = name.split(" ");
+    var InternationalName = name.trim().split(" ");
     InternationalName[1] = InternationalName[1].toUpperCase();
+    InternationalName[0] = InternationalName[0].slice(0,1).toUpperCase() + InternationalName[0].slice(1).toLowerCase();
     InternationalName = InternationalName.join(" ");
     // console.log(InternationalName)
 
