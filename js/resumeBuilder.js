@@ -114,7 +114,7 @@ var work = {
     }],
     display: function() {
         // console.log(this);
-        for (var i = 0; i < this.jobs.length; i++) {
+        for (i in this.jobs) {
             $("#workExperience").append([HTMLworkStart]);
             var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", this.jobs[i].employer);
             var formattedWorkTitle = HTMLworkTitle.replace("%data%", this.jobs[i].title);
