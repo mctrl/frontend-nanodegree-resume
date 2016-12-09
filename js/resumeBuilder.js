@@ -38,10 +38,11 @@ var bio = {
         // var skills = this.skills;
         if (this.skills.length > 0) {
             $("#header").append([HTMLskillsStart]);
-            for (i = 0; i < this.skills.length; i++) {
-                var formattedSkills = HTMLskills.replace("%data%", this.skills[i]);
+
+            this.skills.forEach(function(skill){
+                var formattedSkills = HTMLskills.replace("%data%", skill);
                 $("#skills").append([formattedSkills]);
-            }
+            });
         };
     }
 }
@@ -114,15 +115,15 @@ var work = {
     }],
     display: function() {
         // console.log(this);
-        for (i in this.jobs) {
+        $(this.jobs).each(function(){
             $("#workExperience").append([HTMLworkStart]);
-            var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", this.jobs[i].employer);
-            var formattedWorkTitle = HTMLworkTitle.replace("%data%", this.jobs[i].title);
-            var formattedWorkDates = HTMLworkDates.replace("%data%", this.jobs[i].dates);
-            var formattedWorkLocation = HTMLworkLocation.replace("%data%", this.jobs[i].location)
-            var formattedWorkDescription = HTMLworkDescription.replace("%data%", this.jobs[i].description)
+            var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", this.employer);
+            var formattedWorkTitle = HTMLworkTitle.replace("%data%", this.title);
+            var formattedWorkDates = HTMLworkDates.replace("%data%", this.dates);
+            var formattedWorkLocation = HTMLworkLocation.replace("%data%", this.location)
+            var formattedWorkDescription = HTMLworkDescription.replace("%data%", this.description)
             $(".work-entry").last().append([formattedWorkEmployer, formattedWorkDates, formattedWorkLocation, formattedWorkDescription]).find("a").append([formattedWorkTitle])
-        }
+        });
     }
 }
 
@@ -150,7 +151,7 @@ var projects = {
             var formattedProjectDescription = HTMLprojectDescription.replace("%data%", this.projects[i].description);
             $(".project-entry").last().append([formattedProjectTitle, formattedProjectDates, formattedProjectDescription]);
             var images = this.projects[i].images;
-            if (images, length > 0) {
+            if (images.length > 0) {
                 for (var j = 0; j < images.length; j++) {
                     var formattedProjectImages = HTMLprojectImage.replace("%data%", images[j]);
                     $(".project-entry:last").append(formattedProjectImages);
